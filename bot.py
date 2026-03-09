@@ -14,7 +14,7 @@ from site_worker import submit_phone, submit_sms_code, check_vote_result
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN = "8252986096:AAHJQVWjFDyN9j1C7rEunHalr8pQHI66vRs"   # <-- O'z tokeningni qo'y
+BOT_TOKEN = "8679118861:AAES2RZz_HdxuZWhqi9pVSWxIl5yiL1oL2U"   # <-- O'z tokeningni qo'y
 ADMIN_IDS = [6498632307]              # <-- O'z Telegram ID-ingni qo'y
 
 bot = Bot(token=BOT_TOKEN, parse_mode="Markdown")
@@ -548,10 +548,10 @@ async def withdraw_enter_card(message: types.Message, state: FSMContext):
     )
     await notify_admins(
         f"💳 *Yangi to'lov so'rovi #{payment_id}*\n\n"
-        f"👤 {user[2] if user else 'Noma\\'lum'}\n"
+        f"👤 {user[2] if user else 'Noaniq'}\n"
         f"🆔 ID: `{user_id}`\n"
         f"💳 {card_type.upper()}: `{card_number}`\n"
-        f"💰 Miqdor: *{int(balance):,} so'm*",
+        f"💰 Miqdor: *{int(balance):,} som*",
         reply_markup=kb
     )
     await state.finish()
