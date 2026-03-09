@@ -778,9 +778,23 @@ async def back_main(message: types.Message):
 # ══════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════
+async def health_server():
+    """Koyeb health check uchun mini HTTP server"""
+    from aiohttp import web
+    async def handle(request):
+        return web.Response(text="OK")
+    app = web.Application()
+    app.router.add_get("/", handle)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", 8000)
+    await site.start()
+    logger.info("Health check server port 8000 da ishga tushdi")
+
 if __name__ == "__main__":
     async def on_startup(dp):
         await init_db()
+        await health_server()
         logger.info("Bot ishga tushdi ✅")
 
     executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
