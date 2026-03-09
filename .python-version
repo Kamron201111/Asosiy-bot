@@ -1,5 +1,1 @@
-[phases.setup]
-nixPkgs = ["tesseract"]
-
-[start]
-cmd = "python bot.py"
+3.10
