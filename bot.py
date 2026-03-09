@@ -17,8 +17,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN  = "BOT_TOKEN_SHU_YERGA"  # <-- O'z tokeningni qo'y
-SUPER_ADMIN = 123456789              # <-- O'z Telegram ID-ingni qo'y (hech qachon o'chirmaydi)
+BOT_TOKEN  = "8679118861:AAES2RZz_HdxuZWhqi9pVSWxIl5yiL1oL2U"  # <-- O'z tokeningni qo'y
+SUPER_ADMIN = 6498632307              # <-- O'z Telegram ID-ingni qo'y (hech qachon o'chirmaydi)
 
 bot     = Bot(token=BOT_TOKEN, parse_mode="Markdown")
 storage = MemoryStorage()
